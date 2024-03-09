@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "251728636063",
+    "project_id": "qrcode-97873",
+    "storage_bucket": "qrcode-97873.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251728636063:android:9e0c24ed79051b86915aaa",
+        "android_client_info": {
+          "package_name": "com.FIKRI140702.qr_code"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7_1n14skrHE4bLvJjia5eBjiNgr8Xqm8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
