@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //UNTUK AUTO LOGIN --> FIREBASE AUTHENTICATION
     return StreamBuilder<User?>(
       stream: auth.authStateChanges(),
       builder: (context, snapAuth) {
