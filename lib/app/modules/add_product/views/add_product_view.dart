@@ -35,7 +35,7 @@ class AddProductView extends GetView<AddProductController> {
           const SizedBox(height: 20),
           TextField(
             autocorrect: false,
-            controller: codeC,
+            controller: nameC,
             keyboardType: TextInputType.text,
             maxLength: 10,
             decoration: InputDecoration(
@@ -48,7 +48,7 @@ class AddProductView extends GetView<AddProductController> {
           const SizedBox(height: 20),
           TextField(
             autocorrect: false,
-            controller: codeC,
+            controller: qtyC,
             keyboardType: TextInputType.number,
             maxLength: 10,
             decoration: InputDecoration(
@@ -62,9 +62,24 @@ class AddProductView extends GetView<AddProductController> {
           ElevatedButton(
             onPressed: () async {
               if (controller.isLoading.isFalse) {
-                controller.isLoading(true);
-                //Map<String, dynamic> hasil = ...
-                controller.isLoading(false);
+                if (codeC.text.isNotEmpty &&
+                    nameC.text.isNotEmpty &&
+                    qtyC.text.isNotEmpty) {
+                  controller.isLoading(true);
+                  Map<String, dynamic> hasil = await controller.addProduct({
+                    "code": codeC.text,
+                    "name": nameC.text,
+                    "qty": int.tryParse(qtyC.text) ?? 0,
+                  });
+                  controller.isLoading(false);
+
+                  Get.back();
+
+                  Get.snackbar(hasil["error"] == true ? "Error" : "Success",
+                      hasil["message"]);
+                } else {
+                  Get.snackbar("Error", "Semua data wajib diisi");
+                }
               }
             },
             style: ElevatedButton.styleFrom(
