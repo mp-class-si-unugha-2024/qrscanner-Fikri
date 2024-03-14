@@ -54,7 +54,7 @@ class ProductsView extends GetView<ProductsController> {
                 ),
                 child: InkWell(
                   onTap: () {
-                    Get.toNamed(Routes.detailProduct);
+                    Get.toNamed(Routes.detailProduct, arguments: product);
                   },
                   borderRadius: BorderRadius.circular(9),
                   child: Container(
@@ -83,8 +83,9 @@ class ProductsView extends GetView<ProductsController> {
                           height: 50,
                           width: 50,
                           child: QrImageView(
-                            data: product.code, // corrected product code
-                            version: 5,
+                            data: product.code,
+                            size: 200.0, // corrected product code
+                            version: QrVersions.auto,
                           ),
                         ),
                       ],
