@@ -106,7 +106,6 @@ class DetailProductView extends GetView<DetailProductController> {
                       duration: const Duration(seconds: 2),
                     );
                   }
-                  ;
                 }
               },
               style: ElevatedButton.styleFrom(
@@ -140,6 +139,7 @@ class DetailProductView extends GetView<DetailProductController> {
                         // Balik ke page all products
                         Get.back(); // tutup dialog
                         Get.back(); // Balik ke page all products
+
                         Get.snackbar(
                           hasil["Error"] == true ? "Error" : "Berhasil",
                           hasil["message"],
