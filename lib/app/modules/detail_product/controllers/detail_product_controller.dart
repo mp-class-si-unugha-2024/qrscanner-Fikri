@@ -28,7 +28,7 @@ class DetailProductController extends GetxController {
 
   Future<Map<String, dynamic>> deleteProduct(String id) async {
     try {
-      await firestore.collection("products").doc("id").delete();
+      await firestore.collection("products").doc(id).delete();
       return {
         "error": false,
         "message": "Berhasil delete product.",
