@@ -44,14 +44,14 @@ class HomeView extends GetView<HomeController> {
               title = "QR Code";
               icon = Icons.qr_code;
               onTap = () {
-                print("OPEN CAMERA");
+                controller.downloadCatalog();
               };
               break;
             case 3:
               title = "Catalog";
               icon = Icons.document_scanner_outlined;
               onTap = () {
-                print("OPEN PDF");
+                controller.downloadCatalog();
               };
               break;
           }
