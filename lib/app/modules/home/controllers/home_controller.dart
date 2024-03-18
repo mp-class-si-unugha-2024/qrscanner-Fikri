@@ -18,9 +18,7 @@ class HomeController extends GetxController {
         build: (context) => pw.Center(
           child: pw.Text(
             "test pdf",
-            style: pw.TextStyle(
-              fontSize: 50,
-            ),
+            style: const pw.TextStyle(fontSize: 50),
           ),
         ),
       ),
@@ -30,7 +28,7 @@ class HomeController extends GetxController {
     final Uint8List bytes = await pdf.save();
 
     // Dapatkan direktori aplikasi
-    final Directory directory = await getApplicationDocumentsDirectory();
+    final Directory directory = await getTemporaryDirectory();
 
     // Buat file PDF
     final String path = '${directory.path}/mydocument.pdf';
@@ -40,6 +38,6 @@ class HomeController extends GetxController {
     await file.writeAsBytes(bytes);
 
     // Buka file PDF
-    await OpenFile.open(path);
+    await OpenFile.open(file.path);
   }
 }
