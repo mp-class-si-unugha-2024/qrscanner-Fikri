@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       builder: (context, snapAuth) {
         if (snapAuth.connectionState == ConnectionState.waiting)
           return const LoadingScreen();
-        return GetMaterialApp(
+        return GetMaterialApcdp(
           title: "QR Code",
           initialRoute: snapAuth.hasData ? Routes.home : Routes.login,
           getPages: AppPages.routes,
